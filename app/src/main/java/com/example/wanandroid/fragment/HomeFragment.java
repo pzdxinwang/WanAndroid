@@ -110,6 +110,7 @@ public class HomeFragment extends BaseFragment implements OnRefreshListener,
         mArticleList.clear();
         //通过一个外部的方法控制如果适配器的内容改变时需要强制调用getView来刷新每个Item的内容
         mAdapter.notifyDataSetChanged();
+        ++curPage;
         HttpUtil.get(Constant.ARTICLE + curPage + Constant.MYJSON, ARTICLE_REQUEST_ID, null, this);
     }
 

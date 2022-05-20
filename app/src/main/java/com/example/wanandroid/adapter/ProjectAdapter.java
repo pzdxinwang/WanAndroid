@@ -1,6 +1,7 @@
 package com.example.wanandroid.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.wanandroid.R;
+import com.example.wanandroid.activity.ArticleDetailActivity;
 import com.example.wanandroid.model.Project;
+import com.example.wanandroid.utils.HttpUtil;
+import com.example.wanandroid.utils.SharePreferencesUtil;
+import com.example.wanandroid.utils.ToastUtil;
 
 import java.util.List;
 
@@ -46,6 +51,18 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.InnerHol
         Glide.with(mContext).load(project.getEnvelopePic())
                 .thumbnail(0.1f)
                 .into(pic);
+
+        //项目的点击事件
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ArticleDetailActivity.class);
+                intent.putExtra("title", project.getTitle());
+                intent.putExtra("link", project.getProjectLink());
+                mContext.startActivity(intent);
+            }
+        });
+
     }
 
     @Override

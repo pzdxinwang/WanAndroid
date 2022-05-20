@@ -83,6 +83,7 @@ public class WxArticleFragment extends BaseFragment implements OnRefreshListener
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
         mArticleList.clear();
         mAdapter.notifyDataSetChanged();
+        ++curPage;
         HttpUtil.get(Constant.CHAPTERS_ARTICLE + id + "/" + curPage + Constant.MYJSON, 0, null, this);
     }
 

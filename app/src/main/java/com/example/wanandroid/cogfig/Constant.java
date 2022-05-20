@@ -27,11 +27,12 @@ public class Constant {
     //体系
     public static final String TREE = "tree/json";
     //首页banner
-    public static final String  BANNER ="banner/json";
+    public static final String BANNER = "banner/json";
     //项目分类
     public static final String PROJECT = "project/tree/json";
     //项目列表数据 https://www.wanandroid.com/project/list/1/json?cid=294
     public static final String PROJECT_List = "project/list";
-    //待办清单
+    //项目详情
+    public static final String PROJECT_JSON = "/json?cid=";
 
 }

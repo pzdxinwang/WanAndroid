@@ -1,6 +1,8 @@
 package com.example.wanandroid.fragment;
 
 import android.app.Activity;
+import android.view.MenuItem;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
@@ -34,7 +36,7 @@ public class ProjectFragment extends BaseFragment implements HttpUtil.HttpCallba
     private final int PROJECT_REQUEST_ID = 0;
     private final int TABPAGE_REQUEST_ID = 1;
     private TabLayout tabLayout;
-
+    private int curPage;
 
     @Override
     public int getLayout() {
@@ -54,7 +56,7 @@ public class ProjectFragment extends BaseFragment implements HttpUtil.HttpCallba
 
         tabName = new ArrayList<>();
         projectPresentFragmentList = new ArrayList<>();
-
+        curPage = 1;
         //项目表单的网络请求
         HttpUtil.get(Constant.PROJECT, TABPAGE_REQUEST_ID, null, this);
 
@@ -76,7 +78,7 @@ public class ProjectFragment extends BaseFragment implements HttpUtil.HttpCallba
 
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             //初始化碎片
             initFragment();
         }
@@ -87,7 +89,7 @@ public class ProjectFragment extends BaseFragment implements HttpUtil.HttpCallba
      * 这个方法初始化了碎片 项目上面的tabLayout
      */
     private void initFragment() {
-        ((Activity)mContext).runOnUiThread(new Runnable() {
+        ((Activity) mContext).runOnUiThread(new Runnable() {
             @Override
             public void run() {
                 for (ProjectPresent pp :
@@ -96,7 +98,7 @@ public class ProjectFragment extends BaseFragment implements HttpUtil.HttpCallba
                     tabName.add(pp.getName());
 
                     //设置适配器
-                    TabPageProjectAdapter adapter = new TabPageProjectAdapter(getParentFragmentManager(), projectPresentFragmentList,tabName);
+                    TabPageProjectAdapter adapter = new TabPageProjectAdapter(getParentFragmentManager(), projectPresentFragmentList, tabName);
                     viewPager.setAdapter(adapter);
                     tabLayout.setupWithViewPager(viewPager);
                 }
@@ -111,11 +113,19 @@ public class ProjectFragment extends BaseFragment implements HttpUtil.HttpCallba
 
     @Override
     public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-
+//        ++curPage;
+//        HttpUtil.get("project/list/" + curPage + "/json?cid=" + cid, 0, null, this);
     }
 
     @Override
     public void onRefresh(@NonNull RefreshLayout refreshLayout) {
 
+        //关于加载更多和刷新，这里有点偷工减料了，选择接口应该是PROJECT_List，但是最上面我直接选择了PROJECT
+        //导致这部分有点问题，要是以后要完成这部分内容可以看看homefragment怎么写的
+//
+//        curPage = 1;
+//        projectPresentFragmentList.clear();
+//        projectPresents.notifyAll();
+//        HttpUtil.get( + curPage + "/json?cid=" + cid, 0, null, this);
     }
 }

@@ -26,6 +26,13 @@
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline82"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -107,7 +114,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.88" />
 
     <ImageView
         android:id="@+id/iv_head_portrait"
@@ -123,15 +130,15 @@
 
     <TextView
         android:id="@+id/tv_go_login"
-        android:layout_width="154dp"
-        android:layout_height="33dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:text="登录/注册"
         android:textColor="@drawable/btn_normal"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline27"
+        app:layout_constraintBottom_toTopOf="@+id/guideline83"
         app:layout_constraintEnd_toStartOf="@+id/guideline22"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/guideline82" />
 
     <TextView
         android:id="@+id/tv_phrase"
@@ -159,30 +166,6 @@
         app:layout_constraintGuide_percent="0.21" />
 
     <ImageView
-        android:id="@+id/iv_about_author"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/light_black"
-        app:layout_constraintBottom_toTopOf="@+id/guideline19"
-        app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintStart_toStartOf="@+id/guideline21"
-        app:layout_constraintTop_toTopOf="@+id/guideline24"
-        app:srcCompat="@drawable/pic_mylogo" />
-
-    <TextView
-        android:id="@+id/tv_about_author"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/light_black"
-        android:gravity="center_vertical"
-        android:text="关于作者"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline19"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline26"
-        app:layout_constraintTop_toTopOf="@+id/guideline24" />
-
-    <ImageView
         android:id="@+id/iv_wanandroid"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -201,7 +184,7 @@
         android:layout_height="0dp"
         android:background="@color/light_black"
         android:gravity="center_vertical"
-        android:text="本项目开源网站"
+        android:text="开源网站"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toEndOf="parent"
@@ -237,10 +220,10 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/light_black"
-        app:layout_constraintBottom_toTopOf="@+id/guideline73"
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
         app:layout_constraintStart_toStartOf="@+id/guideline21"
-        app:layout_constraintTop_toTopOf="@+id/guideline72"
+        app:layout_constraintTop_toTopOf="@+id/guideline24"
         app:srcCompat="@android:drawable/ic_lock_power_off" />
 
     <TextView
@@ -251,10 +234,10 @@
         android:gravity="center_vertical"
         android:text="退出登录"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline73"
+        app:layout_constraintBottom_toTopOf="@+id/guideline19"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline26"
-        app:layout_constraintTop_toTopOf="@+id/guideline72" />
+        app:layout_constraintTop_toTopOf="@+id/guideline24" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline21"
@@ -270,29 +253,11 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.13103448" />
 
-    <ImageView
-        android:id="@+id/iv_personal_todo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/light_black"
-        android:src="@drawable/ic_todo"
-        app:layout_constraintBottom_toTopOf="@+id/guideline20"
-        app:layout_constraintEnd_toStartOf="@+id/guideline13"
-        app:layout_constraintStart_toStartOf="@+id/guideline21"
-        app:layout_constraintTop_toTopOf="@+id/guideline25" />
-
-    <TextView
-        android:id="@+id/tv_personal_todo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/light_black"
-        android:gravity="center_vertical"
-        android:text="待办事项"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline26"
-        app:layout_constraintTop_toTopOf="@+id/guideline25"
-        tools:textSize="18sp" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline83"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
